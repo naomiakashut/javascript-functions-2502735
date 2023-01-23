@@ -7,11 +7,13 @@ info = {
 }
 
 function listObject(data) {
+  const $ = document.querySelector.bind(document)
+  
+  let list = '<ul>'
   for (const key in data) {
-    var list = (`${key}: ${data[key]}`)
+    list += `<li><a href="${data[key]}">${key}</a>`
   }
   console.log(list)
-  const $ = document.querySelector.bind(canvas)
   $('#output').innerHTML = list
 }
 
